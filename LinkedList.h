@@ -48,10 +48,25 @@ public:
     }
 
     void addFirst(T value) {
+        Node<T>* newNode = new Node<T>(value);
+        if (!head) {
+            head = newNode;
+        }
+        else {
+            newNode->next = head;
+            head = newNode;
+        }
 
     }
 
     void deleteFirst() {
+        if (!head) {
+            return;
+        }
+
+            Node<T>* current = head->next;
+            delete head;
+            head = current;
 
     }
 
